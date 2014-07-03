@@ -46,7 +46,6 @@ __FBSDID("$FreeBSD: src/bin/sh/exec.c,v 1.24.2.1 2004/09/30 04:41:55 des Exp $")
 #include <fcntl.h>
 #include <errno.h>
 #include <stdlib.h>
-#include <stdio.h>
 
 /*
  * When commands are first encountered, they are entered in a hash table.
@@ -155,7 +154,6 @@ tryexec(char *cmd, char **argv, char **envp)
 {
 	int e;
 
-	printf("executing %s\n", cmd);	//print the command name
 	execve(cmd, argv, envp);
 
 	e = errno;
