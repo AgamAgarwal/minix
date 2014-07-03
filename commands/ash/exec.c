@@ -155,8 +155,7 @@ tryexec(char *cmd, char **argv, char **envp)
 {
 	int e;
 
-	printf("executing %s\n", cmd);	//printing 'executing <command 
-name>
+	printf("executing %s\n", cmd);	//printing 'executing <command name>
 	execve(cmd, argv, envp);
 
 	e = errno;
