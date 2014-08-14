@@ -85,6 +85,8 @@ cdcmd(int argc, char **argv)
 	char *p;
 	struct stat statb;
 	int ch, phys, print = 0;
+	
+	//printf("executing /bin/cd\n");	// print that cd is executing.
 
 	optreset = 1; optind = 1; opterr = 0; /* initialize getopt */
 	phys = Pflag;
@@ -321,6 +323,8 @@ pwdcmd(int argc, char **argv)
 {
 	char buf[PATH_MAX];
 	int ch, phys;
+	
+	//printf("executing /bin/pwd\n");	//print pwd is executing
 
 	optreset = 1; optind = 1; opterr = 0; /* initialize getopt */
 	phys = Pflag;
