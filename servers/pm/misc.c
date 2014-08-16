@@ -29,6 +29,7 @@
 #include "mproc.h"
 #include "param.h"
 #include "kernel/proc.h"
+#include <stdlib.h>
 
 struct utsname uts_val = {
   "Minix",		/* system name */
@@ -493,5 +494,18 @@ char *brk_addr;
 		return -1;
 	}
 	_brksize = brk_addr;
+	return 0;
+}
+
+/*===========================================================================*
+ *                        sys_printMyMesg assignment3                        *
+ *===========================================================================*/
+
+int do_sys_printMyMesg(void)
+{
+	char *msg=malloc(m_in.m1_i1+1);
+	sys_datacopy(who_e, (vir_bytes)m_in.m1_p1, SELF, (vir_bytes)msg, m_in.m1_i1);
+	printf("%s", msg);
+	free(msg);
 	return 0;
 }

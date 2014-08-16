@@ -145,6 +145,7 @@ int do_getsysinfo(void);
 int pm_dumpcore(endpoint_t proc_e, int sig, vir_bytes exe_name);
 void * ds_event(void *arg);
 
+
 /* mount.c */
 int do_fsready(void);
 int do_mount(void);
